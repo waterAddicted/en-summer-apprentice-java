@@ -1,8 +1,8 @@
-package model;
+package com.endava.demo.model;
 
 import jakarta.persistence.*;
 @Entity
-@Table(name = "EventType" ,  schema = "dbo" )
+@Table(name = "event_type" )
 public class  EventType{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,13 +1,15 @@
-package model;
+package com.endava.demo.model;
 
 import jakarta.persistence.*;
-import model.Event;
+
+import java.math.BigDecimal;
 
 @Entity
+@Table(name = "ticket_category")
 public class TicketCategory{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ticket_category_id;
+    private Long ticket_category_id;
 
     @ManyToOne
     @JoinColumn(name = "event_id")
@@ -20,11 +22,11 @@ public class TicketCategory{
     // Constructors
 
     // Getters and Setters
-    public int getTicketCategoryId() {
+    public Long getTicketCategoryId() {
         return ticket_category_id;
     }
 
-    public void setTicketCategoryId(int ticket_category_id) {
+    public void setTicketCategoryId(Long ticket_category_id) {
         this.ticket_category_id = ticket_category_id;
     }
 

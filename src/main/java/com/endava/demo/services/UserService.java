@@ -43,7 +43,6 @@ public class UserService implements IUserService{
     public User updateUser(User User, Long UserID) {
         User updateUser = this.UserRepo.findById(UserID).get();
         updateUser.setUserName(User.getUserName());
-        updateUser.setUserName(User.getUserName());
         updateUser.setEmail(User.getEmail());
         return this.UserRepo.save(updateUser);
     }

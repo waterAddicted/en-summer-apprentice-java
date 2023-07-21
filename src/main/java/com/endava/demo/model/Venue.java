@@ -1,15 +1,16 @@
-package model;
+package com.endava.demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
+@Table(name = "venue" )
 public class Venue {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int venue_id;
+    private Long venue_id;
 
     private String location;
 
@@ -17,14 +18,18 @@ public class Venue {
 
     private int capacity;
 
-    // Constructors
+    @OneToMany(mappedBy = "venue")
+    @JsonIgnore
+    private List<Event> eventList;
 
-    // Getters and Setters
-    public int getVenueId() {
+    public Venue(){
+    }
+
+    public Long getVenueId() {
         return venue_id;
     }
 
-    public void setVenueId(int venue_id) {
+    public void setVenueId(Long venue_id) {
         this.venue_id = venue_id;
     }
 
@@ -50,5 +55,13 @@ public class Venue {
 
     public void setCapacity(int capacity) {
         this.capacity = capacity;
+    }
+
+    public List<Event> getEventList() {
+        return eventList;
+    }
+
+    public void setEventList(List<Event> eventList) {
+        this.eventList = eventList;
     }
 }

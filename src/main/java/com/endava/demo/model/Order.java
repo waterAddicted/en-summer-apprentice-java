@@ -1,15 +1,15 @@
-package model;
+package com.endava.demo.model;
 
 import jakarta.persistence.*;
-import model.TicketCategory;
-import model.User;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
+@Table(name = "orders")
 public class Order{
     @Id
-    private int order_id;
+    private Long order_id;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -29,11 +29,11 @@ public class Order{
     // Constructors
 
     // Getters and Setters
-    public int getOrderId() {
+    public Long getOrderId() {
         return order_id;
     }
 
-    public void setOrderId(int order_id) {
+    public void setOrderId(Long order_id) {
         this.order_id = order_id;
     }
 

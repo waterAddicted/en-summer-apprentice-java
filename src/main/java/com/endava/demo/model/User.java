@@ -1,15 +1,13 @@
-package model;
+package com.endava.demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int user_id;
+    private Long user_id;
 
     private String user_name;
 
@@ -18,11 +16,11 @@ public class User {
     // Constructors
 
     // Getters and Setters
-    public int getUserId() {
+    public Long getUserId() {
         return user_id;
     }
 
-    public void setUserId(int user_id) {
+    public void setUserId(Long user_id) {
         this.user_id = user_id;
     }
 

@@ -1,14 +1,15 @@
-package model;
+package com.endava.demo.model;
 
 import jakarta.persistence.*;
 
 import java.util.Date;
 
 @Entity
+@Table(name = "event" )
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int event_id;
+    private Long event_id;
 
     @ManyToOne
     @JoinColumn(name = "venue_id")
@@ -31,11 +32,11 @@ public class Event {
     // Constructors
 
     // Getters and Setters
-    public int getEventId() {
+    public Long getEventId() {
         return event_id;
     }
 
-    public void setEventId(int event_id) {
+    public void setEventId(Long event_id) {
         this.event_id = event_id;
     }
 
