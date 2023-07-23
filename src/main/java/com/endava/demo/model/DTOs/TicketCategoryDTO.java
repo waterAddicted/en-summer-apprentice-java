@@ -1,13 +1,12 @@
 package com.endava.demo.model.DTOs;
 
-import java.math.BigDecimal;
 
 public class TicketCategoryDTO {
     private Long ticketCategoryID;
     private String description;
-    private BigDecimal price;
+    private int price;
 
-    public TicketCategoryDTO(Long ticketCategoryID, String description, BigDecimal price) {
+    public TicketCategoryDTO(Long ticketCategoryID, String description, int price) {
         this.ticketCategoryID = ticketCategoryID;
         this.description = description;
         this.price = price;
@@ -29,11 +28,11 @@ public class TicketCategoryDTO {
         this.description = description;
     }
 
-    public BigDecimal getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 }

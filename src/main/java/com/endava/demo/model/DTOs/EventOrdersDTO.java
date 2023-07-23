@@ -10,12 +10,12 @@ public class EventOrdersDTO {
     private int numberOfTickets;
     private BigDecimal totalPrice;
 
-    public EventOrdersDTO(Long eventID, Date timestamp, Long ticketCategoryID, int numberOfTickets, BigDecimal totalPrice) {
+    public EventOrdersDTO(Long eventID, Date timestamp, Long ticketCategoryID, int numberOfTickets, int totalPrice) {
         this.eventID = eventID;
         this.timestamp = timestamp;
         this.ticketCategoryID = ticketCategoryID;
         this.numberOfTickets = numberOfTickets;
-        this.totalPrice = totalPrice;
+        this.totalPrice = BigDecimal.valueOf(totalPrice);
     }
 
     public Long getEventID() {
